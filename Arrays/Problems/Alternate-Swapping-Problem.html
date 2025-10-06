@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternate Swapping - CodeDSA</title>
+  <link rel="stylesheet" href="../../CSS/AllProblems.css">
+  <link rel="stylesheet" href="../../CSS/breadcrumb.css">
+  <link rel="stylesheet" href="../../CSS/snake.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+     <div class="logo-container">
+       <div class="logo-img">
+         <img src="../../images/logo.png" alt="Logo">
+       </div>
+       <div class="logo">CodeDSA</div>
+     </div>
+     <div class="nav-right">
+       <ul class="nav-links">
+         <li><a href="../../index.html">Home</a></li>
+         <li><a href="../../about.html">About</a></li>
+         <li><a href="../../contact.html">Contact</a></li>
+       </ul>
+       <button id="snakeToggle" class="snake-btn"><span style="margin-left: 20px;">Snake Cursor</span></button>
+       <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+     </div>
+  </nav>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../arrays.html">Arrays</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Alternate Swapping</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Alternate Swapping</h1>
+
+    <!-- Problem Statement -->
+    <section class="problem-section">
+      <h2>Problem Statement</h2>
+      <p>
+        Given an array of integers, perform alternate swapping of its elements.  
+        That means, swap the <strong>0th and 1st element</strong>, <strong>2nd and 3rd element</strong>, and so on.  
+        If the array has an odd number of elements, the last element remains as it is.
+      </p>
+      <p><strong>Example:</strong></p>
+      <pre class="pseudo-code">
+Input:  arr = [1, 2, 3, 4, 5, 6]
+Output: [2, 1, 4, 3, 6, 5]
+
+Input:  arr = [10, 20, 30, 40, 50]
+Output: [20, 10, 40, 30, 50]
+      </pre>
+    </section>
+
+    <!-- Approach -->
+    <section class="approach-section">
+      <h2>Approach</h2>
+      <p>
+        Traverse the array with a step of 2. For each pair of consecutive elements, swap them.  
+        If the last element has no pair (in case of odd-sized arrays), leave it as it is.
+      </p>
+      <p><strong>Time Complexity:</strong> O(n)</p>
+      <p><strong>Space Complexity:</strong> O(1)</p>
+    </section>
+
+    <!-- C++ Code -->
+    <section class="approach-section">
+      <h2>Implementation (C++)</h2>
+      <pre class="pseudo-code">
+#include &lt;iostream&gt;
+#include &lt;conio.h&gt;
+using namespace std;
+
+void printarray(int arr[], int size);
+void altswap(int arr[], int size);
+
+int main() {
+    system("cls");
+    int size;
+    cout &lt;&lt; "Enter the size : ";
+    cin &gt;&gt; size;
+    int arr[100];
+    cout &lt;&lt; "Enter the elements : ";
+    for (int i = 0; i &lt; size; i++) {
+        cin &gt;&gt; arr[i];
+    }
+    cout &lt;&lt; "Array --> ";
+    printarray(arr, size);
+    altswap(arr, size);
+    cout &lt;&lt; endl &lt;&lt
